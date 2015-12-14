@@ -472,7 +472,7 @@ public class PNCGUI extends javax.swing.JFrame
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -716,27 +716,27 @@ public class PNCGUI extends javax.swing.JFrame
 
         safeInput = false;
 
-            input = initMarking.getText();
+        input = initMarking.getText();
 
-            //NEWEST - CHECKPOINT
-            input = input.trim();
+        //NEWEST - CHECKPOINT
+        input = input.trim();
 
-            if(verify(input, noPlaces))
-            {
-                safeInput = true;
+        if(verify(input, noPlaces))
+        {
+            safeInput = true;
 
-                input = convertInitial(input);
-                markings.add(input);
-                part1safe = true;
-                part0safe = false;
+            input = convertInitial(input);
+            markings.add(input);
+            part1safe = true;
+            part0safe = false;
 
-                labelIntMark.setText("Initial Marking:  " + input);
-                initMarking.setVisible(false);
-                transEnterLabel.setText("Please enter the inputs for Transition 1:  ");
-            }
-            else
-                errorMes.setText("ERROR - Please enter your marking in the format (int, int, . . . int)" +
-                        "\nInclude only positive values and make sure you account for the correct number of places.");
+            labelIntMark.setText("Initial Marking:  " + input);
+            initMarking.setVisible(false);
+            transEnterLabel.setText("Please enter the inputs for Transition 1:  ");
+        }
+        else
+            errorMes.setText("ERROR - Please enter your marking in the format (int, int, . . . int)" +
+                    "\nInclude only positive values and make sure you account for the correct number of places.");
 
     }
 
@@ -935,7 +935,7 @@ public class PNCGUI extends javax.swing.JFrame
             safeInput = false;
             do
             {
-                 transEnterLabel.setText("Please enter the outputs for Transition " + (i+1) +":  ");
+                transEnterLabel.setText("Please enter the outputs for Transition " + (i+1) +":  ");
                 input = in.nextLine();
 
 
@@ -963,7 +963,7 @@ public class PNCGUI extends javax.swing.JFrame
                     }
                 }
                 else
-                   errorMes.setText("ERROR - Please enter your marking in the format (int, int, . . . int)" +
+                    errorMes.setText("ERROR - Please enter your marking in the format (int, int, . . . int)" +
                             "\nInclude only positive values and make sure you account for the correct number of places.");
             }while(!safeInput);
         }
@@ -976,18 +976,18 @@ public class PNCGUI extends javax.swing.JFrame
     //Get Number of Places
     private boolean getNumPlaces()
     {
-            input = numPlaces.getText();
+        input = numPlaces.getText();
 
-            //NEWEST - CHECKPOINT
-            input = input.trim();
+        //NEWEST - CHECKPOINT
+        input = input.trim();
 
-            if(verify(input, POS_INT))
-                safeInput = true;
-            else
-            {
-                errorMes.setText("ERROR - Please enter a positive integer for number of places!" );
-                return false;
-            }
+        if(verify(input, POS_INT) && input.compareTo("0") != 0)
+            safeInput = true;
+        else
+        {
+            errorMes.setText("ERROR - Please enter a positive integer for number of places!" );
+            return false;
+        }
 
         //Create Places
         if(safeInput)
@@ -1005,18 +1005,18 @@ public class PNCGUI extends javax.swing.JFrame
     {
         safeInput = false;
 
-            input = numTrans.getText();
+        input = numTrans.getText();
 
-            //NEWEST - CHECKPOINT
-            input = input.trim();
+        //NEWEST - CHECKPOINT
+        input = input.trim();
 
-            if(verify(input, POS_INT))
-                safeInput = true;
-            else
-            {
-                errorMes.setText("ERROR - Please enter a positive integer for number of Transitions!");
-                return false;
-            }
+        if(verify(input, POS_INT) && input.compareTo("0") != 0)
+            safeInput = true;
+        else
+        {
+            errorMes.setText("ERROR - Please enter a positive integer for number of Transitions!");
+            return false;
+        }
 
 
 
@@ -1055,6 +1055,6 @@ public class PNCGUI extends javax.swing.JFrame
 
 
 
-    //Process transIn
+//Process transIn
 
 
